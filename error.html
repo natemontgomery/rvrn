@@ -1,0 +1,10 @@
+<h1>{{.Title |html}}</h1>
+
+<form action="search" method="get">
+ Artist: <input type="text" name="artist" /><br />
+ <input type="submit" valude="Submit" />
+</form>
+
+<div>{{printf "%s" .Body |html}}</div>
+
+<p>Authored by Nate</p>

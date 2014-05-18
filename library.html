@@ -1,0 +1,28 @@
+<html>
+<head>
+ <link href="main.css" rel="stylesheet" type="text/css">
+ <script type="text/javascript" src="jquery.js"></script>
+
+ <script type="text/javascript">
+  function toggleInfo(objID) {
+   if(!document.getElementById) {return;}
+
+   var obj = document.getElementById(objID).style;
+   obj.display = (obj.display == 'none')?'block':'none';
+  }
+ </script>
+</head>
+
+<body>
+ <h1>{{.Title |html}}</h1>
+
+ <div>{{printf "%s" .Body |html}}</div>
+
+ <input type="file" value="">Add Track(s)</input>
+
+ <br /><br />
+ <a href="/">Back to Search</a>
+ 
+ <p>Authored by Nate</p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+ <link href="main.css" rel="stylesheet" type="text/css">
+ <script type="text/javascript">
+  function toggleInfo(objID) {
+   if(!document.getElementById) {return;}
+
+   var obj = document.getElementById(objID).style;
+   obj.display = (obj.display == 'none')?'block':'none';
+  }
+ </script>
+ <script type="text/javascript" src="jquery.js"></script>
+</head>
+
+<body>
+ <h1>{{.Title |html}}</h1>
+
+ <form action="search" method="get">
+  Artist: <input type="text" name="name" />
+  <br /><br />
+  <input type="submit" value="Submit" />
+ </form>
+
+ <div>{{printf "%s" .Body |html}}</div>
+
+ <div class="mC">
+  {{range .Artists}}
+   <h3 onclick="toggleInfo('{{.Id}}')">{{.Name}}</h3>
+   <ul id="{{.Id}}">
+    {{range .Songs}}
+     <div>
+      <li><strong>Song Name:</strong> {{.Title}}</li>
+      <li><strong>EchoNest Id:</strong> {{.Id}}</li>
+     </div>
+     <br />
+    {{end}}
+   </ul>
+  {{end}}
+ </div>
+
+ <br />
+ <a href="library">Manage Music Library</a>
+
+ <p>Authored by Nate</p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+.mC {
+ width:100px;
+ margin:5px;
+ float:right;
+}
+
+.mC h5 {
+ color:#60c;
+ cursor:pointer;
+ font-weight:bold;
+ border-top:1px solid #300;
+}
+
+.mC ul {
+ display:none;
+ margin-bottom:10px;
+}
+
+.mC li {
+ margin-left:0px;
+ display:none;
+}
